@@ -83,3 +83,12 @@ def database(request):
 
     return render(request, 'database.html', {'databaseobj':database_obj})
 
+
+def post(request, value):
+    return render(request, 'post.html', {'pk':value})
+
+
+def archive(request):
+    years = [2015,2016,2017,2018,2019,2020,2021]
+
+    return render(request,'archive.html',{'years':years})

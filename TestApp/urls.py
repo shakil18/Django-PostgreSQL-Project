@@ -22,4 +22,7 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('database', views.database, name='database'),
     path('logout', views.logout, name='logout'),
+    path('post/<str:value>', views.post, name='post'),
+    path('archive', views.archive, name='archive'),
+
 ]
