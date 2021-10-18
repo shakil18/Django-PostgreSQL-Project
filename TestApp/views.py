@@ -28,6 +28,7 @@ def index(request):
     features_obj = Feature.objects.all()
     return render(request, 'index.html', {'features_obj':features_obj})
 
+
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -53,6 +54,7 @@ def register(request):
     else:
         return render(request, 'register.html')
 
+
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -76,6 +78,3 @@ def database(request):
 
     return render(request, 'database.html', {'databaseobj':database_obj})
 
-
-def admin_panel(request):
-    return render(request, 'admin_panel.html')
