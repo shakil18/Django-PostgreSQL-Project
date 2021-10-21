@@ -1,21 +1,18 @@
 <h1>Login Now</h1>
-{% for msg in messages%}
-{{msg}}
-{% endfor %}
+{% for msg in messages%} {{msg}} {% endfor %}
 
 <form action="login" method="POST">
-    {% csrf_token %}
-    Username:
-    <input type="text" name="username" />
-    Password:
-    <input type="password" name="password">
-    <input type="submit" />
+  {% csrf_token %} Username:
+  <input type="text" name="username" />
+  Password:
+  <input type="password" name="password" />
+  <input type="submit" />
 </form>
 
 <form action="/">
-    <input type="submit" value="Home" />
+  <input type="submit" value="Home" />
 </form>
 
 <form action="register">
-    <input type="submit" value="Signup" />
+  <input type="submit" value="Signup" />
 </form>

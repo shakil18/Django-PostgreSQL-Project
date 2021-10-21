@@ -26,7 +26,7 @@ def index(request):
     # }
 
     features_obj = Feature.objects.all()
-    return render(request, 'index.html', {'features_obj':features_obj})
+    return render(request, 'index.html', {'features_obj': features_obj})
 
 
 def register(request):
@@ -44,7 +44,8 @@ def register(request):
                 messages.info(request, 'Username Already Used')
                 return redirect('register')
             else:
-                user = User.objects.create_user(username=username, email=email, password=password)
+                user = User.objects.create_user(
+                    username=username, email=email, password=password)
                 user.save()
                 return redirect('login')
         else:
@@ -67,10 +68,10 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request, 'Credentials Invalid')
-            return redirect ('login')
+            return redirect('login')
 
-    else: 
-        return render(request,'login.html')
+    else:
+        return render(request, 'login.html')
 
 
 def logout(request):
@@ -81,14 +82,14 @@ def logout(request):
 def database(request):
     database_obj = BloodBankUserDb.objects.all()
 
-    return render(request, 'database.html', {'databaseobj':database_obj})
+    return render(request, 'database.html', {'databaseobj': database_obj})
 
 
 def post(request, value):
-    return render(request, 'post.html', {'pk':value})
+    return render(request, 'post.html', {'pk': value})
 
 
 def archive(request):
-    years = [2015,2016,2017,2018,2019,2020,2021]
+    years = [2015, 2016, 2017, 2018, 2019, 2020, 2021]
 
-    return render(request,'archive.html',{'years':years})
+    return render(request, 'archive.html', {'years': years})
